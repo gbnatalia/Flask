@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ context.title }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ context.header_news }}</h1>
+    <div>{{ context.date }}</div>
+    <p>{{ context.description }}</p>
+{% endblock %}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            Новостной портал
+        {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="my_header">
+    <lu class="bar">
+        <li>
+            <a href="{{ url_for('index') }}">Новостной портал</a>
+        </li>
+        <li>
+            <a href="{{ url_for('moscow_news') }}">Новости Столицы</a>
+        </li>
+        <li>
+            <a href="{{ url_for('perifer_news') }}">Новости Периферии</a>
+        </li>
+        <li>
+            <a href="{{ url_for('world_news') }}">Мировые новости</a>
+        </li>
+    </lu>
+</div>
+
+<div class="main">
+    {% block content %}
+        <h1>Новостной портал</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus at delectus dicta doloribus enim, et ex
+            facilis illum inventore itaque iusto neque quidem quo, sapiente voluptate.</p>
+
+        <h2>Новости по категориям:</h2>
+        <lu>
+            <li>
+                <a href="{{ url_for('moscow_news') }}">Новости Столицы</a>
+            </li>
+            <li>
+                <a href="{{ url_for('perifer_news') }}">Новости Периферии</a>
+            </li>
+            <li>
+                <a href="{{ url_for('world_news') }}">Мировые новости</a>
+            </li>
+        </lu>
+    {% endblock %}
+</div>
+
+<div class="my_footer">
+    <div>Телефон для связи: 322-22-33-23</div>
+</div>
+
+</body>
+</html>

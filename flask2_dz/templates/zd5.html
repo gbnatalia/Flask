@@ -1,0 +1,14 @@
+{%extends 'base.html' %}
+
+{% block title %}
+    Форма идентификации
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+		<label>Введите число 1: <input type="text" name="num1" placeholder="Введите число 1"></label>
+        <label>Введите число 2: <input type="text" name="num2" placeholder="Введите число 2"></label>
+		<label>Введите операцию: <input type="text" name="op" placeholder="Введите '+' или '*' или '/'"></label>
+        <button type="submit">Вычислить</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{%extends 'base.html' %}
+
+{% block title %}
+    Форма идентификации
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <input type="text" name="name" placeholder="Имя">
+        <input type="email" name="email" placeholder="E-mail">
+        <input type="submit" value="Отправить">
+    </form>
+{% endblock %}

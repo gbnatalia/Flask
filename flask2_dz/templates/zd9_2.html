@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Окно приветствия
+{% endblock %}
+
+{% block content %}
+    {% if session.name %}
+        <h1>Привет {{ session.name }}!</h1>
+        <a href="/logout">Выход</a>
+    {% endif %}
+{% endblock %}

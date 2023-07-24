@@ -1,0 +1,12 @@
+{%extends 'base.html' %}
+
+{% block title %}
+    Форма идентификации
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+		<label>Введите число: <input type="text" name="num" placeholder="Введите число"></label>
+        <button type="submit">Отправить</button>
+    </form>
+{% endblock %}

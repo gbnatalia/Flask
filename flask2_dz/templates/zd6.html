@@ -1,0 +1,13 @@
+{%extends 'base.html' %}
+
+{% block title %}
+    Форма идентификации
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+		<label>Введите имя: <input type="text" name="name" placeholder="Введите имя"></label>
+        <label>Введите возраст: <input type="text" name="age" placeholder="Введите возраст"></label>
+        <button type="submit">Ввести</button>
+    </form>
+{% endblock %}

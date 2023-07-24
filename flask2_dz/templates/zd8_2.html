@@ -1,0 +1,18 @@
+{%extends 'base.html' %}
+
+{% block title %}
+    Форма с флэш сообщением
+{% endblock %}
+
+{% block content %}
+   {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <p>
+                {{ message }}
+            </p>
+            {% endfor %}
+        {% endif %}
+   {% endwith %}
+
+{% endblock %}

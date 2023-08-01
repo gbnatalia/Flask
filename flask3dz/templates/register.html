@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Форма регистрации
+{% endblock %}
+
+{% block content %}
+<h1>Регистрация</h1>
+<form method="POST" action="{{ url_for('register') }}">
+    {{ form.csrf_token }}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% for field in form if field.name != 'csrf_token' %}
+    <p>
+        {{ field.label }}<br> {{ field }}
+        {% if field.errors %}
+        <ul class="alert alert-danger">
+            {% for error in field.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </p>
+    {% endfor %}
+
+    <p>
+        <input type="submit" value="Зарегистрироваться">
+    </p>
+</form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Пользователи
+{% endblock %}
+
+{% block content %}
+    <div>
+        <table>
+        <tr><th>Имя</th><th>Фамилия</th><th>Почта</th><th>Пароль</th><th>Дата регистрации</th></tr>
+        {% for user in users %}
+            <tr><th>{{ user.first_name }}</th><th>{{ user.last_name }}</th><th> {{ user.email }}</th><th>{{ user.password }}</th><th>{{ user.created_at }}</th></tr>
+        {% endfor %}
+        </table>
+    </div>
+{% endblock %}
